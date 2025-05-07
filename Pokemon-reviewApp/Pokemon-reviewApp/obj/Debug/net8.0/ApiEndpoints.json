@@ -1,0 +1,22 @@
+[
+  {
+    "ContainingType": "Pokemon_reviewApp.Controllers.PokemonController",
+    "Method": "GetPokemons",
+    "RelativePath": "api/Pokemon",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Pokemon_reviewApp.Models.Pokemon, Pokemon-reviewApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

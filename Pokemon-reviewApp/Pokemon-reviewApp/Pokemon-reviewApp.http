@@ -1,0 +1,6 @@
+@Pokemon_reviewApp_HostAddress = http://localhost:5188
+
+GET {{Pokemon_reviewApp_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
