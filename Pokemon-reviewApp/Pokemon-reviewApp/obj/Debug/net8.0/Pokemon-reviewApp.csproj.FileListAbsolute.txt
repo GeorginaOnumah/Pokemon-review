@@ -170,3 +170,5 @@ C:\Users\HP\Documents\Repos\Pokemon-review\Pokemon-reviewApp\Pokemon-reviewApp\b
 C:\Users\HP\Documents\Repos\Pokemon-review\Pokemon-reviewApp\Pokemon-reviewApp\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 C:\Users\HP\Documents\Repos\Pokemon-review\Pokemon-reviewApp\Pokemon-reviewApp\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\HP\Documents\Repos\Pokemon-review\Pokemon-reviewApp\Pokemon-reviewApp\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\HP\Documents\Repos\Pokemon-review\Pokemon-reviewApp\Pokemon-reviewApp\obj\Debug\net8.0\Pokemon-reviewApp.sourcelink.json
+C:\Users\HP\Documents\Repos\Pokemon-review\Pokemon-reviewApp\Pokemon-reviewApp\bin\Debug\net8.0\AutoMapper.dll
