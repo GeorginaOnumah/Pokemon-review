@@ -34,6 +34,12 @@ namespace Pokemon_reviewApp.Repository
             return Save();
         }
 
+        public bool DeletePokemon(Pokemon pokemon)
+        {
+            _context.Remove(pokemon);
+            return Save();
+        }
+
         public Pokemon GetPokemon(int id)
         {
             return _context.Pokemon.Where(p => p.Id == id).FirstOrDefault();
@@ -57,9 +63,9 @@ namespace Pokemon_reviewApp.Repository
             return _context.Pokemon.OrderBy(p => p.Name).ToList();
         }
 
-        public object GetPokemonTrimToUpper(PokemonDto pokemonCreate)
+        public Pokemon GetPokemonTrimToUpper(PokemonDto pokemonCreate)
         {
-            throw new NotImplementedException();
+            return GetPokemons().Where(c => c.Name.Trim().ToUpper() == pokemonCreate.Name.TrimEnd().ToUpper()).FirstOrDefault();
         }
 
         public bool PokemonExists(int pokeId)
@@ -67,10 +73,16 @@ namespace Pokemon_reviewApp.Repository
             return _context.Pokemon.Any(p => p.Id == pokeId);
         }
 
+        public bool UpdatePokemon(int ownerId, int categoryId, Pokemon pokemon)
+        {
+            _context.Update(pokemon);
+            return Save();
+        }
+
         public bool Save()
         {
             var saved = _context.SaveChanges();
-            return saved > 0 ? true: false;
+            return saved > 0 ? true : false;
         }
     }
 }
