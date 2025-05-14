@@ -1,4 +1,5 @@
 ﻿using Pokemon_reviewApp.Data;
+using Pokemon_reviewApp.Dto;
 using Pokemon_reviewApp.Interfaces;
 using Pokemon_reviewApp.Models;
 
@@ -11,6 +12,26 @@ namespace Pokemon_reviewApp.Repository
         public PokemonRepository(DataContext Context)
         {
             _context = Context;
+        }
+
+        public bool CreatePokemon(int ownerId, int categoryId, Pokemon pokemon)
+        {
+            var pokemonOwnerEntity = _context.Owners.Where(a => a.Id == ownerId).FirstOrDefault();
+            var category = _context.Categories.Where(a => a.Id == categoryId).FirstOrDefault();
+            var pokemonOwner = new PokemonOwner()
+            {
+                Owner = pokemonOwnerEntity,
+                Pokemon = pokemon,
+            };
+            _context.Add(pokemonOwner);
+            var pokemonCategory = new PokemonCategory()
+            {
+                Category = category,
+                Pokemon = pokemon,
+            };
+            _context.Add(pokemonCategory);
+            _context.Add(pokemon);
+            return Save();
         }
 
         public Pokemon GetPokemon(int id)
@@ -36,9 +57,20 @@ namespace Pokemon_reviewApp.Repository
             return _context.Pokemon.OrderBy(p => p.Name).ToList();
         }
 
+        public object GetPokemonTrimToUpper(PokemonDto pokemonCreate)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool PokemonExists(int pokeId)
         {
             return _context.Pokemon.Any(p => p.Id == pokeId);
+        }
+
+        public bool Save()
+        {
+            var saved = _context.SaveChanges();
+            return saved > 0 ? true: false;
         }
     }
 }
